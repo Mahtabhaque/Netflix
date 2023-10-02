@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .weak{
+            color: red;
+        }
+        .good{
+            color: blue;
+        }
+        .average{
+            color: orange;
+        }
+        .strong{
+            color: green;
+        }
+        .box{
+            width: 150px;
+            height: 40px;
+            background-color: aqua;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <input type="password" id="data" onkeyup="getPassword(this.value);"  class="box" placeholder="enter your password">
+    <p id="msg">Enter a valid password</p>
+
+
+
+
+    <script>
+        let getPassword = (value) => {
+            // document.getElementById("msg").innerHTML= value
+
+            if(value.length >= 1 && value.length <=3){
+                document.getElementById("msg").innerHTML="<span class='weak'>Weak password</span>"
+            }
+            else if(value.length >3 && value.length <=5){
+                document.getElementById("msg").innerHTML="<span class='good'>Good password</span>";
+            }
+            
+            else if(value.length >5 && value.length <=8){
+                document.getElementById("msg").innerHTML="<span class='average'>Average password</span>";
+            }
+            
+            else if(value.length > 8){
+                document.getElementById("msg").innerHTML="<span class='strong'>Strong password</span>";
+            }
+            
+            else{
+                
+                document.getElementById("msg").innerHTML="<span> Password Required</span>";
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>
